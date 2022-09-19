@@ -1020,7 +1020,7 @@
 				CODE_SIGN_ENTITLEMENTS = TelnyxWebRTCDemo/TelnyxWebRTCDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 14;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TF844TQ9AW;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TelnyxWebRTCDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1028,7 +1028,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.telnyx.webrtcapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.telnyx.webrtcapp22;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1044,7 +1044,7 @@
 				CODE_SIGN_ENTITLEMENTS = TelnyxWebRTCDemo/TelnyxWebRTCDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 14;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TF844TQ9AW;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TelnyxWebRTCDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1052,7 +1052,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = com.telnyx.webrtcapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.telnyx.webrtcapp22;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -278,6 +278,34 @@ public class TxClient {
         // Request gateway state
         self.socket?.sendMessage(message: message)
     }
+    
+    private func onVertoMessage(message: Message) {
+        Logger.log.w(message: "onVertoMessage-- \(String(describing: message.method))  -- \(String(describing: message.params))")
+        var currentState: CallState = .NEW
+        switch message.method {
+        case .BYE:
+            currentState = .DONE
+            break
+        case .INVITE:
+            currentState = .CONNECTING
+            break
+        case .MEDIA:
+            currentState = .ACTIVE
+            break
+
+        case .ANSWER:
+            currentState = .ACTIVE
+            break;
+
+        case .RINGING:
+            currentState = .RINGING
+            break
+        default:
+            Logger.log.w(message: "onVertoMessage-- Default method")
+            break
+        }
+        self.delegate?.onVertoMessageUpdate(callState: currentState, message: message.params)
+    }
 }
 
 // MARK: - SDK Initializations
@@ -542,7 +570,8 @@ extension TxClient : SocketDelegate {
     func onMessageReceived(message: String) {
         Logger.log.i(message: "TxClient:: SocketDelegate onMessageReceived() message: \(message)")
         guard let vertoMessage = Message().decode(message: message) else { return }
-
+        
+        self.onVertoMessage(message: vertoMessage)
         //Check if server is sending an error code
         if let error = vertoMessage.serverError {
             let message : String = error["message"] as? String ?? "Unknown"
@@ -573,7 +602,6 @@ extension TxClient : SocketDelegate {
                let call = calls[callUUID] {
                 call.handleVertoMessage(message: vertoMessage)
             }
-
             //Parse incoming Verto message
             switch vertoMessage.method {
                 case .CLIENT_READY:

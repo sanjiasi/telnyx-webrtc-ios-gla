@@ -51,9 +51,12 @@ class ViewController: UIViewController {
 
         // Restore last user credentials
         self.settingsView.isHidden = false
-        self.settingsView.sipUsernameLabel.text = userDefaults.getSipUser()
-        self.settingsView.passwordUserNameLabel.text = userDefaults.getSipUserPassword()
+        self.settingsView.sipUsernameLabel.text = "gencredW9h8tKCCevNqnB6i4NlcqkcqOTLWQthM0BMjErm3Yx"// userDefaults.getSipUser()
+        self.settingsView.passwordUserNameLabel.text = "8f5afb0376a747f69c53be61efe1ae73"// userDefaults.getSipUserPassword()
 
+        self.settingsView.callerIdNumberLabel.text = "+14244320303"
+        self.settingsView.callerIdNameLabel.text = "gla"
+        self.callView.destinationNumberOrSip.text = "+17604743854"//"+12165321923" +18043360007  +8613248063172
         // Environment Selector
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress))
         self.logo.addGestureRecognizer(longPressRecognizer)

@@ -86,6 +86,7 @@ extension ViewController : VoIPDelegate {
     }
     
     func onCallStateUpdated(callState: CallState, callId: UUID) {
+        print("onCallStateUpdated: \(callState)")
         DispatchQueue.main.async {
             switch (callState) {
                 case .CONNECTING:

@@ -171,7 +171,7 @@ public class Call {
         self.ringTonePlayer = self.buildAudioPlayer(fileName: ringtone)
         self.ringbackPlayer = self.buildAudioPlayer(fileName: ringbackTone)
 
-        self.updateCallState(callState: .RINGING)
+        self.updateCallState(callState: .NEW)
     }
 
     // MARK: - Private functions
@@ -451,7 +451,6 @@ extension Call : PeerDelegate {
 extension Call {
 
     internal func handleVertoMessage(message: Message) {
-
         switch message.method {
         case .BYE:
             //Close call
@@ -479,7 +478,7 @@ extension Call {
             self.stopRingtone()
             self.stopRingbackTone()
             //When the remote peer answers the call
-            //Set the remote SDP into the current RTCPConnection and the call should start!
+            //When the remote peer answers the call Set the remote SDP into the current RTCPConnection and the call should start!
             if let params = message.params {
                 guard let remoteSdp = params["sdp"] as? String else {
                     Logger.log.w(message: "Call:: .ANSWER missing SDP")
@@ -492,7 +491,6 @@ extension Call {
             break;
 
         case .RINGING:
-
             if let params = message.params {
                 if let telnyxSessionId = params["telnyx_session_id"] as? String,
                    let telnyxSessionUUID = UUID(uuidString: telnyxSessionId) {
