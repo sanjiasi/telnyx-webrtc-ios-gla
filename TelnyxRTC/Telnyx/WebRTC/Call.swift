@@ -537,6 +537,7 @@ extension Call {
 
         ringbackPlayer.numberOfLoops = -1 // infinite
         ringbackPlayer.play()
+        self.updateCallState(callState: .RINGING)
     }
 
     private func stopRingbackTone() {
