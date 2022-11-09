@@ -294,7 +294,7 @@ public class TxClient {
             break
 
         case .ANSWER:
-            currentState = .ACTIVE
+            currentState = .ANSWERED
             break;
 
         case .RINGING:

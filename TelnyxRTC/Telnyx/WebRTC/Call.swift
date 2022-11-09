@@ -24,6 +24,8 @@ public enum CallState {
     case HELD
     /// Call has ended.
     case DONE
+    /// Call has Answered.
+    case ANSWERED
 }
 
 enum CallDirection : String {

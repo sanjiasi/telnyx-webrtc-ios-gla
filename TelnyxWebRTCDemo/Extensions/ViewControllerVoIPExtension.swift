@@ -95,7 +95,7 @@ extension ViewController : VoIPDelegate {
                     break
                 case .NEW:
                     break
-                case .ACTIVE:
+            case .ACTIVE, .ANSWERED:
                     self.incomingCallView.isHidden = true
                     self.callView.isHidden = false
                     break
