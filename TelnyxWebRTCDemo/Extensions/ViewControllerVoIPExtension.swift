@@ -89,21 +89,24 @@ extension ViewController : VoIPDelegate {
         print("onCallStateUpdated: \(callState)")
         DispatchQueue.main.async {
             switch (callState) {
-                case .CONNECTING:
-                    break
-                case .RINGING:
-                    break
-                case .NEW:
-                    break
-            case .ACTIVE, .ANSWERED:
-                    self.incomingCallView.isHidden = true
-                    self.callView.isHidden = false
-                    break
-                case .DONE:
-                    self.resetCallStates()
-                    break
-                case .HELD:
-                    break
+            case .CONNECTING:
+                break
+            case .RINGING:
+                break
+            case .NEW:
+                break
+            case .ACTIVE:
+                self.incomingCallView.isHidden = true
+                self.callView.isHidden = false
+                break
+            case .ANSWERED:
+                print("take a talk")
+                break
+            case .DONE:
+                self.resetCallStates()
+                break
+            case .HELD:
+                break
             }
             self.updateButtonsState()
         }
